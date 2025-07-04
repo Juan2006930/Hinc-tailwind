@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Hinc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white dark:bg-gray-800 hidden md:block shadow-md">
+    <div class="p-6 text-2xl font-bold tracking-wide">Hinc Admin</div>
+    <nav class="px-4">
+      <ul class="space-y-2">
+        <li><a href="#" class="block py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">📊 Dashboard</a></li>
+        <li><a href="#" class="block py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">🛍️ Productos</a></li>
+        <li><a href="#" class="block py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">📦 Inventario</a></li>
+        <li><a href="#" class="block py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">🧾 Pedidos</a></li>
+        <li><a href="#" class="block py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">👥 Clientes</a></li>
+        <li><a href="#" class="block py-2 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700">⚙️ Configuración</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="flex-1 flex flex-col">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow">
+      <h1 class="text-xl font-semibold">Panel de Ventas - Hinc</h1>
+      <button id="darkToggle" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full">🌙</button>
+    </header>
+
+    <!-- Content -->
+    <main class="p-6 space-y-6">
+
+      <!-- Stats -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+          <h2 class="text-sm font-medium">Total Ventas</h2>
+          <p class="text-3xl font-bold mt-2">$34,200</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+          <h2 class="text-sm font-medium">Pedidos</h2>
+          <p class="text-3xl font-bold mt-2">1,243</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+          <h2 class="text-sm font-medium">Productos activos</h2>
+          <p class="text-3xl font-bold mt-2">324</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+          <h2 class="text-sm font-medium">Stock bajo</h2>
+          <p class="text-3xl font-bold mt-2">18</p>
+        </div>
+      </section>
+
+      <!-- Gráfico (simulado con barras) -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Ventas esta semana</h2>
+        <div class="grid grid-cols-7 gap-4 items-end h-40">
+          <div class="bg-indigo-500 h-[20%] rounded text-center text-xs">Lun</div>
+          <div class="bg-indigo-500 h-[40%] rounded text-center text-xs">Mar</div>
+          <div class="bg-indigo-500 h-[70%] rounded text-center text-xs">Mié</div>
+          <div class="bg-indigo-500 h-[90%] rounded text-center text-xs">Jue</div>
+          <div class="bg-indigo-500 h-[60%] rounded text-center text-xs">Vie</div>
+          <div class="bg-indigo-500 h-[80%] rounded text-center text-xs">Sáb</div>
+          <div class="bg-indigo-500 h-[50%] rounded text-center text-xs">Dom</div>
+        </div>
+      </section>
+
+      <!-- Pedidos recientes -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Pedidos recientes</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white dark:bg-gray-800 rounded-lg shadow">
+            <thead class="bg-gray-100 dark:bg-gray-700">
+              <tr>
+                <th class="px-6 py-3 text-left text-sm">Cliente</th>
+                <th class="px-6 py-3 text-left text-sm">Fecha</th>
+                <th class="px-6 py-3 text-left text-sm">Total</th>
+                <th class="px-6 py-3 text-left text-sm">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                <td class="px-6 py-4">Laura Herrera</td>
+                <td class="px-6 py-4">03/07/2025</td>
+                <td class="px-6 py-4">$129.99</td>
+                <td class="px-6 py-4 text-green-500 font-semibold">Enviado</td>
+              </tr>
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                <td class="px-6 py-4">Miguel Pérez</td>
+                <td class="px-6 py-4">02/07/2025</td>
+                <td class="px-6 py-4">$89.50</td>
+                <td class="px-6 py-4 text-yellow-500 font-semibold">Pendiente</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4">Sofía Díaz</td>
+                <td class="px-6 py-4">01/07/2025</td>
+                <td class="px-6 py-4">$204.00</td>
+                <td class="px-6 py-4 text-red-500 font-semibold">Cancelado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Top productos vendidos -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Más vendidos</h2>
+        <ul class="space-y-3">
+          <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex justify-between items-center">
+            <span>👕 Camiseta Oversize Negra</span>
+            <span class="text-sm text-gray-500">+ 420 ventas</span>
+          </li>
+          <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex justify-between items-center">
+            <span>👖 Pantalón Cargo Beige</span>
+            <span class="text-sm text-gray-500">+ 389 ventas</span>
+          </li>
+          <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex justify-between items-center">
+            <span>🧥 Chaqueta de Jean Clásica</span>
+            <span class="text-sm text-gray-500">+ 350 ventas</span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
